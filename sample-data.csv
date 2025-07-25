@@ -1,0 +1,6 @@
+workRequestNumber,wrName,soeId,projectName,projectType,lob
+WR001,Website Redesign,EMP001,Company Website Revamp,Development,Digital
+WR002,Mobile App,EMP002,Customer Mobile Application,Development,Digital
+WR003,Database Migration,EMP003,Legacy System Migration,Infrastructure,IT
+WR004,Security Audit,EMP004,Annual Security Assessment,Security,IT
+WR005,Training Program,EMP005,Employee Development Initiative,Training,HR
