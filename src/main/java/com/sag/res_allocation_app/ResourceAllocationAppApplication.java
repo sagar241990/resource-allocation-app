@@ -1,4 +1,4 @@
-package com.sag.res_allocation_app.resource_allocation_app;
+package com.sag.res_allocation_app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
