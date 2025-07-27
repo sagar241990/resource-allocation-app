@@ -1,47 +1,37 @@
-📘 Project Name: ProjectAllocationApp 📝 Description: ProjectAllocationApp is a backend service designed to manage and allocate resources across various projects. The application will handle the ingestion and persistence of project allocation data through file uploads. In the future, a frontend application built with Angular will integrate with this Spring Boot backend to offer a full-featured user interface.
+# ProjectAllocationApp
 
-🧰 Tech Stack: Backend Framework: Spring Boot
+ProjectAllocationApp is a Spring Boot service for managing and allocating resources across projects. The service supports uploading CSV or Excel files containing allocation information and persists the data in an in-memory H2 database. A future Angular frontend will consume this backend.
 
-Web Layer: Spring Web
+## Tech Stack
+- **Spring Boot** (web & data JPA)
+- **H2 Database** for development and testing
+- **Apache POI** for Excel file parsing
 
-Persistence Layer: Spring Data JPA
+## Key Features
+- Upload project allocation details using `/api/upload`
+- Supports `.csv` and `.xlsx` files with the following columns:
+  - `workRequestNumber`
+  - `wrName`
+  - `soeId`
+  - `projectName`
+  - `projectType`
+  - `lob`
+- Data from uploaded files is stored in the H2 database
 
-Database: H2 (in-memory, for development and testing)
+## Development Tasks
+1. Ensure dependencies for **Web**, **JPA**, and **H2** are present.
+2. Organize the code base with packages for controller, service, repository, model, dto, and util.
+3. Implement the `ProjectAllocation` JPA entity and repository.
+4. Configure H2 database properties.
+5. Implement CSV and Excel parsing logic in a generic upload service.
+6. Validate uploaded data before persisting.
 
-🚀 Key Feature (Phase 1): 📂 Upload Project Allocation Details Supports CSV or Excel file formats
+## Running the Application
+Use Maven to start the application:
 
-Expected Columns:
+```bash
+./mvnw spring-boot:run
+```
 
-workRequestNumber
+The H2 console is available at `/h2-console` while the application is running.
 
-wrName
-
-soeId
-
-projectName
-
-projectType
-
-lob
-
-Uploaded data will be parsed and stored in the H2 database
-
-✅ Task Breakdown 🏗️ 1. Project Setup check Spring Boot project for dependencies: Web, JPA, H2
-
-Set up base package structure (controller, service, repository, model, dto, util)
-
-🧱 2. Model and Database Layer Create ProjectAllocation JPA Entity
-
-Create ProjectAllocationRepository interface
-
-Configure H2 database properties
-
-📥 3. CSV/Excel File Upload Feature Design upload endpoint: /api/upload
-
-Implement CSV parser (e.g., using BufferedReader)
-
-Integrate Apache POI for Excel (.xlsx) parsing
-
-Create a generic FileUploadService
-
-Validate uploaded data (e.g., null checks, formats)
